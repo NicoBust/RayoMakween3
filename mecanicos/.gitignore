@@ -1,0 +1,29 @@
+# Entornos virtuales
+venv/
+myvenv/
+env/
+.venv/
+.env/
+
+# Archivos de configuración
+*.env
+.env
+
+# Archivos de bases de datos
+*.sqlite3
+db.sqlite3
+
+# Archivos de compilación de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Logs
+*.log
+
+# Directorios de configuración del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración de Visual Studio Code
+.vscode/

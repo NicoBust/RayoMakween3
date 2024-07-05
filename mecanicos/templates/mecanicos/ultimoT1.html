@@ -1,12 +1,3 @@
-<!-- apara no tener inconveniente debe agregar las siguientes extenciones:
-1. bootstrap 5 Icon snipets de joshua
-2. bootstrap 5 snippets de shariar
-3. bootstrap 4, font awesome 4... de ashok
-4. bootstrap 5 Quick snippets de Anbuselvan
-5. font Awesome de Thinker
-6. Font Awesome gallery de Tomaasvergara
-7. Live server-->
-{% load static %}
 <!doctype html>
 <html lang="en">
     <head>
@@ -21,7 +12,6 @@
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"/>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script defer src="data.js"></script>
         <link rel="stylesheet" href="css/style.css"> <!--css local-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- 3 lineas siguientes es para que carge las fuente de google fonts-->
@@ -62,45 +52,32 @@
                             <!-- inicio sector de busqueda -->
                             <input id="searchInput" class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
                             <button class="btn btn-outline-secondary" type="submit">Buscar</button>
+                            <script defer src="data.js"></script>
                         </form> <!-- fin sector de busqueda -->
                     </div>
                 </div>
             </nav>
+            <script defer src="main.js"></script>
         </header>
 
         <main>
-            <!-- carrusel -->
-            <div id="carouselExampleCaptions" class="carousel slide">
-                <div class="carousel-indicators" id="carouselIndicators"></div>
-                <div class="carousel-inner" id="carouselInner"></div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                    <span class="carousel-control-next-icon " aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-                
-            </div>
-            <!--fin carrusel -->
 
             <div class="trabajos-realizados">
                 <div class="detalle-trabajo py-4">
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-8 col-md-8 txt-justificado">
-                                <p class="t600 display-5 txt-naranja text-center">Detalle de trabajos</p>
-                                <p class="txt-justificado txt-plomo">Se llevaron a cabo varios proyectos integrales que incluyó el cambio de un catalitico,
-                                    un cambio en caja de cambio, solucion a un problema electrico, además,
-                                    la renovación completa de la pintura del vehículo y la actualización de las luces de halógeno a LED.
-                                    Este trabajo implicó habilidades técnicas avanzadas y un enfoque meticuloso para mejorar el rendimiento
-                                    y la estética del automóvil, ofreciendo a los clientes una experiencia segura y confiable al confiarnos estas tareas.</p>
+                                <p class="t600 display-5 txt-naranja text-center">Detalle de ultimo trabajo</p>
+                                <p class="t600 display-5 txt-naranja text-center">Esteban Salas</p>
+                                <p>Con fecha (12-04-2024)</p>
+                                <p class="txt-justificado txt-plomo">Se recibió un desafío único cuando un cliente llegó con un vehículo de alta gama que presentaba problemas eléctricos intermitentes. Las luces interiores y exteriores parpadeaban sin razón aparente, y los sistemas de seguridad no funcionaban correctamente.</p>
+                                <p class="txt-justificado txt-plomo">Esteban inició su diagnóstico con una revisión minuciosa del sistema eléctrico del automóvil. Tras horas de pruebas y análisis, descubrió un fallo oculto en el cableado principal que alimentaba tanto las luces como los sistemas de seguridad. Con precisión y cuidado, reemplazó los cables defectuosos y reforzó las conexiones críticas.</p>
+                                <p class="txt-justificado txt-plomo">El resultado fue impresionante: las luces del vehículo volvieron a funcionar perfectamente, y los sistemas de seguridad se restauraron por completo. El cliente quedó sorprendido por la rapidez y la eficacia de Esteban, quien una vez más demostró por qué es un referente en su campo.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div><p class="t400 display-6 txt-naranja text-center">Ultimos 3 de nuestras reparaciónes</p>
+                <div><p class="t400 display-6 txt-naranja text-center">Galeria imagenes</p>
                 </div>
 
                 <!--Ultimos trabajos-->
@@ -108,26 +85,35 @@
                     <div class="row">
                         <div class="col-lg-2"></div>
                         <div class="col-lg-3 col-md-3 text-center bordes separa-hori-lg separa-verti">
-                            <p>Solución eléctrica (12-04-2024)</p>
-                            <a href="ultimoT1.html"><img class="img-bordes" src="img\electrico\01-copia.jpg" width="290" height="200"></a>
+                            <p>Buscando el problema</p>
+                            <img class="img-bordes" src="img\electrico\galeria\01.jpg" width="290" height="200">
                         </div>
                         <div class="col-lg-3 col-md-3 text-center bordes separa-hori-lg separa-verti">
-                            <p>Reparación caj.cambio (12-04-2024)</p>
-                            <a href="ultimoT2.html"><img class="img-bordes" src="img\caja de cambio\01-copia.jpg" width="290" height="200"></a>
+                            <p>Problema encontrado</p>
+                            <img class="img-bordes" src="img\electrico\galeria\02.jpg" width="290" height="200">
                         </div>
                         <div class="col-lg-3 col-md-3 text-center bordes separa-hori-lg separa-verti">
-                            <p>Cambio en Catalitico (12-04-2024)</p>
-                            <a href="ultimoT3.html"><img class="img-bordes" src="img\gases\01-copia.jpg" width="290" height="200"></a>
+                            <p>Solución</p>
+                            <img class="img-bordes" src="img\electrico\galeria\03.jpg" width="290" height="200">
                         </div>
                     </div>
                 </div>
                 <!--Fin Ultimos trabajos-->
-
-                <!--ingreso a la galeria-->
-                <div>
-                    <a class="dropdown-item" href="galeria.html"><p class="t600 display-5 txt-naranja text-center">Nuestra galería completa</p></a>
+                
+                <div class="row">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-8 col-md-8 txt-justificado">
+                        <h2 class="txt-naranja text-center">Materiales utilizados</h2>
+                        <li>Cables eléctricos de alta calidad: Utilizados para reemplazar el cableado defectuoso, asegurando una conductividad óptima y durabilidad.</li>
+                        <li>Conectores eléctricos y terminales: Para asegurar conexiones seguras y fiables entre los cables y los componentes del sistema eléctrico.</li>
+                        <li>Cinta aislante y tubos termorretráctiles: Para proteger las conexiones eléctricas de la humedad y el desgaste.</li>
+                        <li>Multímetro: Herramienta esencial para medir voltaje, corriente y resistencia, ayudando a diagnosticar problemas eléctricos.</li>
+                        <li>Herramientas de crimpado y pelado de cables: Para preparar y asegurar las conexiones de los cables.</li>
+                        <li>Luces LED de repuesto: En caso de que las luces originales estuvieran dañadas, proporcionando una solución de alta eficiencia energética.</li>
+                        <li>Fusibles y relés: Para reemplazar componentes que pudieran estar quemados o defectuosos, asegurando la protección del sistema eléctrico.</li>
+                        <li>Manual de servicio del vehículo: Para obtener esquemas eléctricos y especificaciones precisas, facilitando el diagnóstico y reparación.</li>
+                    </div>
                 </div>
-                <!--fin ingreso a la galeria-->
             </div>
         </main>
 
@@ -154,10 +140,6 @@
             </div>
         </footer>
 
-        <!--archivos estaticos-->
-        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-        <script src="{% static 'js/script.js' %}"></script>
-        
         <!-- jquery-->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script

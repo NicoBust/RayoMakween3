@@ -1,27 +1,19 @@
-<!-- apara no tener inconveniente debe agregar las siguientes extenciones:
-1. bootstrap 5 Icon snipets de joshua
-2. bootstrap 5 snippets de shariar
-3. bootstrap 4, font awesome 4... de ashok
-4. bootstrap 5 Quick snippets de Anbuselvan
-5. font Awesome de Thinker
-6. Font Awesome gallery de Tomaasvergara
-7. Live server-->
-{% load static %}
 <!doctype html>
 <html lang="en">
     <head>
-
-        <title>Rayo Makween</title>
+        <title>galeria</title>
         <!-- Required meta tags -->
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
-    
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
         <!-- Bootstrap CSS v5.2.1 -->
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"/>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script defer src="data.js"></script>
         <link rel="stylesheet" href="css/style.css"> <!--css local-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- 3 lineas siguientes es para que carge las fuente de google fonts-->
@@ -29,10 +21,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@200..900&display=swap" rel="stylesheet">
     </head>
-    
-    <body>
-        <header>
 
+    <body class="fondo">
+        <header>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid bg-plomo">
                     <img src="img/logo.png" width="60" onclick="navigateTo('index.html')" style="cursor: pointer;">
@@ -62,75 +53,95 @@
                             <!-- inicio sector de busqueda -->
                             <input id="searchInput" class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
                             <button class="btn btn-outline-secondary" type="submit">Buscar</button>
+                            <script defer src="data.js"></script>
                         </form> <!-- fin sector de busqueda -->
                     </div>
                 </div>
             </nav>
+            <script defer src="main.js"></script>
         </header>
-
+        
         <main>
-            <!-- carrusel -->
-            <div id="carouselExampleCaptions" class="carousel slide">
-                <div class="carousel-indicators" id="carouselIndicators"></div>
-                <div class="carousel-inner" id="carouselInner"></div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                    <span class="carousel-control-next-icon " aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-                
-            </div>
-            <!--fin carrusel -->
-
-            <div class="trabajos-realizados">
-                <div class="detalle-trabajo py-4">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8 col-md-8 txt-justificado">
-                                <p class="t600 display-5 txt-naranja text-center">Detalle de trabajos</p>
-                                <p class="txt-justificado txt-plomo">Se llevaron a cabo varios proyectos integrales que incluyó el cambio de un catalitico,
-                                    un cambio en caja de cambio, solucion a un problema electrico, además,
-                                    la renovación completa de la pintura del vehículo y la actualización de las luces de halógeno a LED.
-                                    Este trabajo implicó habilidades técnicas avanzadas y un enfoque meticuloso para mejorar el rendimiento
-                                    y la estética del automóvil, ofreciendo a los clientes una experiencia segura y confiable al confiarnos estas tareas.</p>
-                            </div>
+            <div class="galeria py-4">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 col-md-8">
+                            <p class="t600 display-5 txt-naranja text-center">Galería</p>
+                            <p class="txt-justificado txt-plomo">en este apartado encontrara todos nuestros trabajos, los que han tenido buena recepción
+                                teniendo total gratitud de nuestros clientes, comprometiendonos 100% en satisfacer sus necesidade, problemas y urgencias.
+                            </p>
                         </div>
                     </div>
                 </div>
-                <div><p class="t400 display-6 txt-naranja text-center">Ultimos 3 de nuestras reparaciónes</p>
-                </div>
-
-                <!--Ultimos trabajos-->
+            </div>
+            <div class="galeria txt-plomo">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-2"></div>
                         <div class="col-lg-3 col-md-3 text-center bordes separa-hori-lg separa-verti">
-                            <p>Solución eléctrica (12-04-2024)</p>
-                            <a href="ultimoT1.html"><img class="img-bordes" src="img\electrico\01-copia.jpg" width="290" height="200"></a>
+                            <p>Tarea eléctrica (12-04-2024)</p>
+                            <img class="img-bordes" src="img\electrico\01.jpg" width="290" height="200">
                         </div>
                         <div class="col-lg-3 col-md-3 text-center bordes separa-hori-lg separa-verti">
-                            <p>Reparación caj.cambio (12-04-2024)</p>
-                            <a href="ultimoT2.html"><img class="img-bordes" src="img\caja de cambio\01-copia.jpg" width="290" height="200"></a>
+                            <p>Tarea caj. de cambio (12-04-2024)</p>
+                            <img class="img-bordes" src="img\caja de cambio\01.jpg" width="290" height="200">
                         </div>
                         <div class="col-lg-3 col-md-3 text-center bordes separa-hori-lg separa-verti">
-                            <p>Cambio en Catalitico (12-04-2024)</p>
-                            <a href="ultimoT3.html"><img class="img-bordes" src="img\gases\01-copia.jpg" width="290" height="200"></a>
+                            <p>Tarea carrosería (12-04-2024)</p>
+                            <img class="img-bordes" src="img\carroseria\01.jpg" width="290" height="200">
+                        </div>
+                        <div class="col-lg-3 col-md-3 text-center bordes separa-hori-lg separa-verti">
+                            <p>Tarea caj. de cambio (11-04-2024)</p>
+                            <img class="img-bordes" src="img\caja de cambio\02.jpg" width="290" height="200">
+                        </div>
+                        <div class="col-lg-3 col-md-3 text-center bordes separa-hori-lg separa-verti">
+                            <p>Tarea con gases (11-04-2024)</p>
+                            <img class="img-bordes" src="img\gases\01.jpg" width="290" height="200">
+                        </div>
+                        <div class="col-lg-3 col-md-3 text-center bordes separa-hori-lg separa-verti">
+                            <p>Tarea eléctrica (11-04-2024)</p>
+                            <img class="img-bordes" src="img\electrico\02.jpg" width="290" height="200">
+                        </div>
+                        <div class="col-lg-3 col-md-3 text-center bordes separa-hori-lg separa-verti">
+                            <p>Tarea carrosería (11-04-2024)</p>
+                            <img class="img-bordes" src="img\carroseria\02.jpg" width="290" height="200">
+                        </div>
+                        <div class="col-lg-3 col-md-3 text-center bordes separa-hori-lg separa-verti">
+                            <p>Tarea con gases (11-04-2024)</p>
+                            <img class="img-bordes" src="img\gases\02.jpg" width="290" height="200">
+                        </div>
+                        <div class="col-lg-3 col-md-3 text-center bordes separa-hori-lg separa-verti">
+                            <p>Tarea con gases (09-04-2024)</p>
+                            <img class="img-bordes" src="img\gases\03.jpg" width="290" height="200">
+                        </div>
+                        <div class="col-lg-3 col-md-3 text-center bordes separa-hori-lg separa-verti">
+                            <p>Tarea eléctrica (09-04-2024)</p>
+                            <img class="img-bordes" src="img\electrico\03.jpg" width="290" height="200">
+                        </div>
+                        <div class="col-lg-3 col-md-3 text-center bordes separa-hori-lg separa-verti">
+                            <p>Tarea carrosería (09-04-2024)</p>
+                            <img class="img-bordes" src="img\carroseria\03.jpg" width="290" height="200">
+                        </div>
+                        <div class="col-lg-3 col-md-3 text-center bordes separa-hori-lg separa-verti">
+                            <p>Tarea caj. de cambio (09-04-2024)</p>
+                            <img class="img-bordes" src="img\caja de cambio\03.jpg" width="290" height="200">
+                        </div>
+                        <div class="col-lg-3 col-md-3 text-center bordes separa-hori-lg separa-verti">
+                            <p>Tarea eléctrica (05-04-2024)</p>
+                            <img class="img-bordes" src="img\electrico\04.jpg" width="290" height="200">
+                        </div>
+                        <div class="col-lg-3 col-md-3 text-center bordes separa-hori-lg separa-verti">
+                            <p>Tarea caj. de cambio (05-04-2024)</p>
+                            <img class="img-bordes" src="img\caja de cambio\04.jpg" width="290" height="200">
+                        </div>
+                        <div class="col-lg-3 col-md-3 text-center bordes separa-hori-lg separa-verti">
+                            <p>Tarea carrosería (05-04-2024)</p>
+                            <img class="img-bordes" src="img\carroseria\04.jpg" width="290" height="200">
                         </div>
                     </div>
                 </div>
-                <!--Fin Ultimos trabajos-->
-
-                <!--ingreso a la galeria-->
-                <div>
-                    <a class="dropdown-item" href="galeria.html"><p class="t600 display-5 txt-naranja text-center">Nuestra galería completa</p></a>
-                </div>
-                <!--fin ingreso a la galeria-->
             </div>
         </main>
-
+        
         <footer class="footer text-center">
             <div class="copyright">
                 <div class="container">
@@ -154,10 +165,6 @@
             </div>
         </footer>
 
-        <!--archivos estaticos-->
-        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-        <script src="{% static 'js/script.js' %}"></script>
-        
         <!-- jquery-->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script

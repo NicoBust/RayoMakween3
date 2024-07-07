@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Contacto - Rayo Makween</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding-bottom: 100px; /* Ajuste para el footer */
+            position: relative;
+            min-height: 100vh;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header style="background-color: #343a40; color: white; padding: 10px;">
+        <nav style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center;">
+                <a href="index.html"><img src="https://images.vexels.com/content/147722/preview/car-mechanic-service-logo-27f06b.png" width="60" style="cursor: pointer;"></a>
+                <p style="margin: 0 0 0 10px;">Taller Mecánico <br><span style="font-size: 14px;">Rayo Makween</span></p>
+            </div>
+            <ul style="list-style: none; display: flex; margin: 0; padding: 0;">
+                <li style="margin-right: 10px;"><a href="index.html" style="color: white; text-decoration: none;">Inicio</a></li>
+                <li style="margin-right: 10px;"><a href="quienes-somos.html" style="color: white; text-decoration: none;">Sobre Nosotros</a></li>
+                <li style="margin-right: 10px;"><a href="contacto.html" style="color: white; text-decoration: none;">Contacto</a></li>
+                <li style="margin-right: 10px;"><a href="registro.html" style="color: white; text-decoration: none;">Registrarse</a></li>
+                <li style="margin-right: 10px;"><a href="login.html" style="color: white; text-decoration: none;">Ingreso</a></li>
+            </ul>
+            <form id="searchForm" style="display: flex; align-items: center;">
+                <input id="searchInput" style="padding: 5px; margin-right: 5px;" type="search" placeholder="Buscar" aria-label="Search">
+                <button style="padding: 5px 10px;">Buscar</button>
+            </form>
+        </nav>
+    </header>
+<br><br><br>
+    <div class="form-container">
+        <h2>Contacto</h2>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="mensaje">Mensaje</label>
+                <textarea class="form-control" id="mensaje" name="mensaje" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+        </form>
+    </div>
+
+    <footer>
+        <hr style="border: 1px solid #444;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <p style="margin: 20;"><b><a href="index.html" style="color: white;"><img src="https://images.vexels.com/content/147722/preview/car-mechanic-service-logo-27f06b.png" width="50"></a> | 2024 | Mecánica | Taller mecánico Rayo Makween |</b></p>
+            </div>
+            <div>
+                <ul style="list-style: none; display: flex; margin: 0; padding: 0;">
+                    <li style="margin-right: 10px;"><a href="https://www.instagram.com/" style="color: white;">Instagram</a></li>
+                    <li style="margin-right: 10px;"><a href="https://www.facebook.com/" style="color: white;">Facebook</a></li>
+                    <li style="margin-right: 10px;"><a href="https://chat.whatsapp.com/DurFAMRbmdsAjO7Pc6r6UO" style="color: white;">Whatsapp</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

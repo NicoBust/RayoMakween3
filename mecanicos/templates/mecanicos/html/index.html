@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Rayo Makween</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .carousel-inner img {
+            height: 500px; /* Ajusta la altura según tus necesidades */
+            object-fit: cover; /* Asegura que las imágenes cubran el contenedor sin distorsionarse */
+        }
+
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para el texto */
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; display: flex; flex-direction: column; min-height: 100vh;">
+    <header style="background-color: #343a40; color: white; padding: 10px;">
+        <nav style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center;">
+                <a href="index.html"><img src="https://images.vexels.com/content/147722/preview/car-mechanic-service-logo-27f06b.png" width="60" style="cursor: pointer;"></a>
+                <p style="margin: 0 0 0 10px;">Taller Mecánico <br><span style="font-size: 14px;">Rayo Makween</span></p>
+            </div>
+            <ul style="list-style: none; display: flex; margin: 0; padding: 0;">
+                <li style="margin-right: 10px;"><a href="index.html" style="color: white; text-decoration: none;">Inicio</a></li>
+                <li style="margin-right: 10px;"><a href="quienes-somos.html" style="color: white; text-decoration: none;">Sobre Nosotros</a></li>
+                <li style="margin-right: 10px;"><a href="contacto.html" style="color: white; text-decoration: none;">Contacto</a></li>
+                <li style="margin-right: 10px;"><a href="registro.html" style="color: white; text-decoration: none;">Registrarse</a></li>
+                <li style="margin-right: 10px;"><a href="login.html" style="color: white; text-decoration: none;">Ingreso</a></li>
+            </ul>
+            <form id="searchForm" style="display: flex; align-items: center;">
+                <input id="searchInput" style="padding: 5px; margin-right: 5px;" type="search" placeholder="Buscar" aria-label="Search">
+                <button style="padding: 5px 10px;">Buscar</button>
+            </form>
+        </nav>
+    </header>
+
+    <div style="flex: 1; padding: 20px;">
+        <main>
+            <!-- Carrusel -->
+            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <a href="detalle-electrico.html">
+                            <img src="https://cdn.prod.website-files.com/6196b1e466d8195ef8b8d8d9/65c10714ef4f800fa419de5d_2-FEB---Sistema-electrico-auto.png" class="d-block w-100" alt="Solución Eléctrica">
+                        </a>
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Solución Eléctrica</h5>
+                            <p>12-04-2024</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="detalle-caja-cambio.html">
+                            <img src="https://www.latercera.com/resizer/IwErB5dOk0p0_ephu2IUjGlMgKc=/900x600/smart/cloudfront-us-east-1.images.arcpublishing.com/copesa/P3DDIP7DPNEWFETGNWDMQWVJIY.jpg" class="d-block w-100" alt="Reparación Caja de Cambio">
+                        </a>
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Reparación Caja de Cambio</h5>
+                            <p>12-04-2024</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="detalle-catalitico.html">
+                            <img src="https://www.expertoautorecambios.es/magazine/wp-content/uploads/2017/09/Fotolia_103411853_XS.jpg" class="d-block w-100" alt="Cambio en Catalítico">
+                        </a>
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Cambio en Catalítico</h5>
+                            <p>12-04-2024</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+
+            <div style="text-align: center;">
+                <h2 style="color: #333;">Detalle de trabajos</h2>
+                <p style="color: #666;">Se llevaron a cabo varios proyectos integrales que incluyó el cambio de un catalitico, un cambio en caja de cambio, solución a un problema eléctrico, además, la renovación completa de la pintura del vehículo y la actualización de las luces de halógeno a LED</p>
+            </div>
+
+            <div style="text-align: center; margin: 20px 0;">
+                <h3 style="color: #333;">Últimos 3 de nuestras reparaciones</h3>
+                <div style="display: flex; justify-content: center; gap: 10px;">
+                    <div style="text-align: center; background-color: white; padding: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+                        <p style="color: #666;">Solución Eléctrica (12-04-2024)</p>
+                        <a href="detalle-electrico.html"><img src="https://cdn.prod.website-files.com/6196b1e466d8195ef8b8d8d9/65c10714ef4f800fa419de5d_2-FEB---Sistema-electrico-auto.png" width="290" height="200" style="border: 1px solid #ccc;"></a>
+                    </div>
+                    <div style="text-align: center; background-color: white; padding: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+                        <p style="color: #666;">Reparación Caja de Cambio (12-04-2024)</p>
+                        <a href="detalle-caja-cambio.html"><img src="https://www.latercera.com/resizer/IwErB5dOk0p0_ephu2IUjGlMgKc=/900x600/smart/cloudfront-us-east-1.images.arcpublishing.com/copesa/P3DDIP7DPNEWFETGNWDMQWVJIY.jpg" width="290" height="200" style="border: 1px solid #ccc;"></a>
+                    </div>
+                    <div style="text-align: center; background-color: white; padding: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+                        <p style="color: #666;">Cambio en Catalítico (12-04-2024)</p>
+                        <a href="detalle-catalitico.html"><img src="https://www.expertoautorecambios.es/magazine/wp-content/uploads/2017/09/Fotolia_103411853_XS.jpg" width="290" height="200" style="border: 1px solid #ccc;"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin: 20px 0;">
+                
+            </div>
+        </main>
+    </div>
+
+    <footer style="background-color: #343a40; color: white; text-align: center; padding: 20px;">
+        <hr style="border: 1px solid #444;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <p style="margin: 20;"><b><a href="index.html" style="color: white;"><img src="https://images.vexels.com/content/147722/preview/car-mechanic-service-logo-27f06b.png" width="50"></a> | 2024 | Mecánica | Taller mecánico Rayo Makween |</b></p>
+            </div>
+            <div>
+                <ul style="list-style: none; display: flex; margin: 0; padding: 0;">
+                    <li style="margin-right: 10px;"><a href="https://www.instagram.com/" style="color: white;">Instagram</a></li>
+                    <li style="margin-right: 10px;"><a href="https://www.facebook.com/" style="color: white;">Facebook</a></li>
+                    <li style="margin-right: 10px;"><a href="https://chat.whatsapp.com/DurFAMRbmdsAjO7Pc6r6UO" style="color: white;">Whatsapp</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

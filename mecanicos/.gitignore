@@ -1,0 +1,14 @@
+# Entorno virtual
+myvenv/
+venv/
+
+# Archivos de configuración
+*.env
+.env
+
+# Archivos de bases de datos
+*.sqlite3
+
+# Compilados
+*.pyc
+__pycache__/

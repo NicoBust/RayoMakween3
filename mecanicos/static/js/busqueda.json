@@ -1,6 +1,6 @@
 [
     { "nombre": "sobre nosotros", "url": "quienes-somos.html"},
-    { "nombre": "nosotros", "url": "quienes-somos.html"},
+    { "nombre": "nosotros", "href": "{% url 'galeria' %}"},
     { "nombre": "contacto", "url": "contacto.html" },
     { "nombre": "registro", "url": "registro.html" },
     { "nombre": "registrarse", "url": "registro.html" },
@@ -37,7 +37,9 @@
     { "nombre": "peultimo", "url": "ultimoT2.html" },
     { "nombre": "nicolas", "url": "ultimoT2.html" },
     { "nombre": "antepeultimo", "url": "ultimoT3.html" },
-    { "nombre": "juan", "url": "ultimoT3.html" }
+    { "nombre": "juan", "url": "ultimoT3.html" },
+    { "nombre": "galeria", "url": "{% url 'galeria' %}" }
+
 ]
 
 

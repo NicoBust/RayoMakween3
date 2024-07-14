@@ -42,6 +42,11 @@ def ultimoT3 (request) :
     #context = { }
     return render(request, "ultimoT3.html")
 
+def crud (request):
+    cliente = cliente.objects.all()
+    context = {'cliente': cliente}
+    return render (request, 'eliminarU.html', context)
+
 #registro django
 # views.py
 from django.shortcuts import render, redirect

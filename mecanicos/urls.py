@@ -13,4 +13,5 @@ urlpatterns = [
     path('ultimoT1/', views.ultimoT1, name="ultimoT1"),
     path('ultimoT2/', views.ultimoT2, name="ultimoT2"),
     path('ultimoT3/', views.ultimoT3, name="ultimoT3"),
+    path('crud', views.crud, name="crud"),
 ]

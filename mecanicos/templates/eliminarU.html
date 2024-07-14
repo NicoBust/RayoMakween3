@@ -57,66 +57,28 @@
         </header>
 
         <main>
-            <!-- carrusel -->
-            <div id="carouselExampleCaptions" class="carousel slide">
-                <div class="carousel-indicators" id="carouselIndicators"></div>
-                <div class="carousel-inner" id="carouselInner"></div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                    <span class="carousel-control-next-icon " aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-                
+            <h1>]Lista editable de clientes</h1>
+            <br>
+            <button type="button">
+                <a href="{% url 'registro'%}"> Agregar</a>
+            </button>
+            <div id="idMensajes">
+                {% if mensaje%}
+                    {{mensaje}}
+                {% endif %}
             </div>
-            <!--fin carrusel -->
+            <table>
+                {% if cliente %}
+                    <th>Nombre</th>
+                    <th>apellido</th>
+                    <th>Eliminar</th>
+                    <th>Modificar</th>
+                    {% for x in clientes %}
+                        <tr>
+                            bla-bla-bla
+                        </tr>
+            </table>
 
-            <div class="trabajos-realizados">
-                <div class="detalle-trabajo py-4">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8 col-md-8 txt-justificado">
-                                <p class="t600 display-5 txt-naranja text-center">Detalle de trabajos</p>
-                                <p class="txt-justificado txt-plomo">Se llevaron a cabo varios proyectos integrales que incluyó el cambio de un catalitico,
-                                    un cambio en caja de cambio, solucion a un problema electrico, además,
-                                    la renovación completa de la pintura del vehículo y la actualización de las luces de halógeno a LED.
-                                    Este trabajo implicó habilidades técnicas avanzadas y un enfoque meticuloso para mejorar el rendimiento
-                                    y la estética del automóvil, ofreciendo a los clientes una experiencia segura y confiable al confiarnos estas tareas.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div><p class="t400 display-6 txt-naranja text-center">Ultimos 3 de nuestras reparaciónes</p>
-                </div>
-
-                <!--Ultimos trabajos-->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-2"></div>
-                        <div class="col-lg-3 col-md-3 text-center bordes separa-hori-lg separa-verti">
-                            <p>Solución eléctrica (12-04-2024)</p>
-                            <a href="{% url 'ultimoT1' %}"><img class="img-bordes" src="img\electrico\01-copia.jpg" width="290" height="200"></a>
-                        </div>
-                        <div class="col-lg-3 col-md-3 text-center bordes separa-hori-lg separa-verti">
-                            <p>Reparación caj.cambio (12-04-2024)</p>
-                            <a href="{% url 'ultimoT2' %}"><img class="img-bordes" src="img\caja de cambio\01-copia.jpg" width="290" height="200"></a>
-                        </div>
-                        <div class="col-lg-3 col-md-3 text-center bordes separa-hori-lg separa-verti">
-                            <p>Cambio en Catalitico (12-04-2024)</p>
-                            <a href="{% url 'ultimoT3' %}"><img class="img-bordes" src="img\gases\01-copia.jpg" width="290" height="200"></a>
-                        </div>
-                    </div>
-                </div>
-                <!--Fin Ultimos trabajos-->
-
-                <!--ingreso a la galeria-->
-                <div>
-                    <a class="dropdown-item" href="{% url 'galeria' %}"><p class="t600 display-5 txt-naranja text-center">Nuestra galería completa</p></a>
-                </div>
-                <!--fin ingreso a la galeria-->
-            </div>
         </main>
 
         <footer class="footer text-center">

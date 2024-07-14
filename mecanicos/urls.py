@@ -1,32 +1,16 @@
-"""taller URL Configuration
+#from django.conf.urls import url
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.1/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-from django.contrib import admin
-from django.urls import path, include
-from .views import register
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('mecanicos/', include('mecanicos.urls')),
-]
-
-from django.urls import path
+from django.urls import path # type: ignore
 from . import views
 
-
 urlpatterns = [
-    path('registro/', register, name='register'),
-    # otras rutas
+    path('', views.index, name="index"),
+    path('qSomos/', views.qSomos, name="qSomos"),
+    path('contacto/', views.contacto, name="contacto"),
+    path('Ingreso/', views.Ingreso, name="Ingreso"),
+    path('registro/', views.registro, name="registro"),
+    path('galeria/', views.galeria, name="galeria"),
+    path('ultimoT1/', views.ultimoT1, name="ultimoT1"),
+    path('ultimoT2/', views.ultimoT2, name="ultimoT2"),
+    path('ultimoT3/', views.ultimoT3, name="ultimoT3"),
 ]

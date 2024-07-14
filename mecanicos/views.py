@@ -1,14 +1,46 @@
-from django.shortcuts import render
+from django.shortcuts import render # type: ignore
+#from django.http import HttpResponse
 
 # Create your views here.
+TEMPLATE_DIRS = (
+    'OS.PATH.JOIN(base_dir, "TEMPLATES),'
+)
 
-#index django
-def index(request):
-    context={}
-    return render(request, 'mecanicos/index.html', context)
+def index (request) :
+    #context = { }
+    return render(request, "index.html")
 
+def qSomos (request) :
+    #context = { }
+    return render(request, "qSomos.html")
 
+def contacto (request) :
+    #context = { }
+    return render(request, "contacto.html")
 
+def Ingreso (request) :
+    #context = { }
+    return render(request, "Ingreso.html")
+
+def registro (request) :
+    #context = { }
+    return render(request, "registro.html")
+
+def galeria (request) :
+    #context = { }
+    return render(request, "galeria.html")
+
+def ultimoT1 (request) :
+    #context = { }
+    return render(request, "ultimoT1.html")
+
+def ultimoT2 (request) :
+    #context = { }
+    return render(request, "ultimoT2.html")
+
+def ultimoT3 (request) :
+    #context = { }
+    return render(request, "ultimoT3.html")
 
 #registro django
 # views.py
@@ -30,5 +62,3 @@ def register(request):
     else:
         form = RegisterForm()
     return render(request, 'registro.html', {'form': form})
-
-

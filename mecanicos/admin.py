@@ -7,3 +7,6 @@ from .models import cliente
 # Register your models here.
 
 admin.site.register(cliente)
+
+from .models import ImageEntry
+admin.site.register(ImageEntry)

@@ -1,5 +1,7 @@
-from django.shortcuts import render # type: ignore
-#from django.http import HttpResponse
+from django.shortcuts import render, redirect, get_object_or_404
+from django.http import HttpResponse
+from .models import ImageEntry
+from .forms import ImageEntryForm
 
 # Create your views here.
 #TEMPLATE_DIRS = (
@@ -7,8 +9,9 @@ from django.shortcuts import render # type: ignore
 #)
 
 def index (request) :
+    latest_images = ImageEntry.objects.order_by('-id')[:3]  # Obtiene las 3 últimas imágenes
     #context = { }
-    return render(request, "index.html")
+    return render(request, 'index.html', {'latest_images': latest_images})
 
 def qSomos (request) :
     #context = { }
@@ -46,6 +49,40 @@ def crud (request):
     cliente = cliente.objects.all()
     context = {'cliente': cliente}
     return render (request, 'eliminarU.html', context)
+
+#vista para manejar
+def image_list(request):
+    images = ImageEntry.objects.all()
+    return render(request, 'image_list.html', {'images': images})
+
+def image_create(request):
+    if request.method == 'POST':
+        form = ImageEntryForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('image_list')
+    else:
+        form = ImageEntryForm()
+    return render(request, 'image_form.html', {'form': form})
+
+def image_update(request, pk):
+    image = get_object_or_404(ImageEntry, pk=pk)
+    if request.method == 'POST':
+        form = ImageEntryForm(request.POST, request.FILES, instance=image)
+        if form.is_valid():
+            form.save()
+            return redirect('image_list')
+    else:
+        form = ImageEntryForm(instance=image)
+    return render(request, 'image_form.html', {'form': form})
+
+def image_delete(request, pk):
+    image = get_object_or_404(ImageEntry, pk=pk)
+    if request.method == 'POST':
+        image.delete()
+        return redirect('image_list')
+    return render(request, 'image_confirm_delete.html', {'image': image})
+
 
 #registro django
 # views.py

@@ -1,0 +1,16 @@
+<h1>Lista de Imágenes</h1>
+<a href="{% url 'image_create' %}">Agregar Nueva Imagen</a>
+<ul>
+    {% for image in images %}
+        <li>
+            <h5>{{ image.title }}</h5>
+            <img src="{{ image.image.url }}" alt="{{ image.description }}" style="max-width: 100px;">
+            <p>{{ image.description }}</p>
+            <p>{{ image.materials }}</p>
+            <p><strong>Autor:</strong> {{ image.author }}</p>
+            <p><strong>Fecha:</strong> {{ image.date }}</p>
+            <a href="{% url 'image_update' image.pk %}">Editar</a>
+            <a href="{% url 'image_delete' image.pk %}">Eliminar</a>
+        </li>
+    {% endfor %}
+</ul>

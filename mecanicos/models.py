@@ -58,3 +58,19 @@ class cliente(models.Model):
 
     def __str__(self):
         return str(self.nombre)+" "+str(self.apellido_paterno)
+
+# para almacenar la información de las imágenes, descripciones y materiales usados.
+class ImageEntry(models.Model):
+    title = models.CharField(max_length=255, default='Título por defecto')  # Agregar un valor por defecto
+    image = models.ImageField(upload_to='images/')
+    description = models.TextField()
+    materials = models.CharField(max_length=255)
+    date = models.DateField()
+    author = models.CharField(max_length=100, choices=[
+        ('Esteban', 'Esteban'),
+        ('Nicolas', 'Nicolas'),
+        ('Juan', 'Juan'),
+    ])
+
+    def __str__(self):
+        return self.title

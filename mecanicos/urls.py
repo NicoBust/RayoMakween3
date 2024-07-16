@@ -2,6 +2,7 @@
 
 from django.urls import path # type: ignore
 from . import views
+from .views import image_list, image_create, image_update, image_delete
 
 urlpatterns = [
     path('', views.index, name="index"),
@@ -14,4 +15,9 @@ urlpatterns = [
     path('ultimoT2/', views.ultimoT2, name="ultimoT2"),
     path('ultimoT3/', views.ultimoT3, name="ultimoT3"),
     path('crud', views.crud, name="crud"),
+
+    path('', image_list, name='image_list'),
+    path('add/', image_create, name='image_create'),
+    path('edit/<int:pk>/', image_update, name='image_update'),
+    path('delete/<int:pk>/', image_delete, name='image_delete'),
 ]

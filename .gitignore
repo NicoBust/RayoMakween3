@@ -7,8 +7,5 @@
 #.env
 
 # Archivos de bases de datos
-#*.sqlite3
 
-# Compilados
-#*.pyc
-#__pycache__/
+#*.sqlite3

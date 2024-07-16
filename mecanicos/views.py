@@ -2,9 +2,9 @@ from django.shortcuts import render # type: ignore
 #from django.http import HttpResponse
 
 # Create your views here.
-TEMPLATE_DIRS = (
-    'OS.PATH.JOIN(base_dir, "TEMPLATES),'
-)
+#TEMPLATE_DIRS = (
+#    'OS.PATH.JOIN(base_dir, "TEMPLATES),'
+#)
 
 def index (request) :
     #context = { }
@@ -49,21 +49,21 @@ def crud (request):
 
 #registro django
 # views.py
-from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate
-from django.contrib import messages
-from .forms import RegisterForm
+#from django.shortcuts import render, redirect
+#from django.contrib.auth import login, authenticate
+#from django.contrib import messages
+#from .forms import RegisterForm
 
-def register(request):
-    if request.method == 'POST':
-        form = RegisterForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
-            messages.success(request, 'Registro exitoso.')
-            return redirect('index')  # Asegúrate de que esta sea la URL correcta para tu página de inicio
-        else:
-            messages.error(request, 'Registro fallido. Información inválida.')
-    else:
-        form = RegisterForm()
-    return render(request, 'registro.html', {'form': form})
+#def register(request):
+#    if request.method == 'POST':
+#        form = RegisterForm(request.POST)
+#        if form.is_valid():
+#            user = form.save()
+#            login(request, user)
+#            messages.success(request, 'Registro exitoso.')
+#            return redirect('index')  # Asegúrate de que esta sea la URL correcta para tu página de inicio
+#        else:
+#            messages.error(request, 'Registro fallido. Información inválida.')
+#    else:
+#        form = RegisterForm()
+#    return render(request, 'registro.html', {'form': form})

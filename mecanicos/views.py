@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404 # type: ignore
 from django.contrib.auth import logout # type: ignore
 from django.contrib.auth.decorators import login_required # type: ignore
-from django.http import HttpResponse
+from django.http import HttpResponse # type: ignore
 from .models import ImageEntry
 from .forms import ImageEntryForm
 

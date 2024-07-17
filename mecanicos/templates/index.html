@@ -117,26 +117,29 @@
                 </div>
                 <div><p class="t400 display-6 txt-naranja text-center">Ultimos 3 de nuestras reparaciónes</p>
                 </div>
-
-                <!--Ultimos trabajos-->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-2"></div>
-                        <div class="col-lg-3 col-md-3 text-center bordes separa-hori-lg separa-verti">
-                            <p>Solución eléctrica (12-04-2024)</p>
-                            <a href="{% url 'ultimoT1' %}"><img class="img-bordes" src="img\electrico\01-copia.jpg" width="290" height="200"></a>
+                <h1>Últimas Imágenes</h1>
+                <div class="image-grid">
+                    {% for image in images %}
+                        <div class="image-box">
+                            <h2>{{ image.title }}</h2>
+                            <p>Date: {{ image.date }}</p>
+                            <img src="{{ image.image.url }}" alt="{{ image.title }}">
                         </div>
-                        <div class="col-lg-3 col-md-3 text-center bordes separa-hori-lg separa-verti">
-                            <p>Reparación caj.cambio (12-04-2024)</p>
-                            <a href="{% url 'ultimoT2' %}"><img class="img-bordes" src="img\caja de cambio\01-copia.jpg" width="290" height="200"></a>
-                        </div>
-                        <div class="col-lg-3 col-md-3 text-center bordes separa-hori-lg separa-verti">
-                            <p>Cambio en Catalitico (12-04-2024)</p>
-                            <a href="{% url 'ultimoT3' %}"><img class="img-bordes" src="img\gases\01-copia.jpg" width="290" height="200"></a>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
-                <!--Fin Ultimos trabajos-->
+                <!--Ultimos trabajos-->
+                <div class="image-grid">
+                    {% for image in latest_images %}
+                        <div class="image-box">
+                            <p class="#">{{ image.title }} - {{ image.date|date:"d-M-Y"}}</p>
+                            <img src="{{ image.image.url }}" class="d-block w-100" alt="{{ image.title }}" height="190">
+                            <div class="">
+                                
+                                <!--h5 class="txt-amarillo">{{ image.description }}</h5-->
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
 
                 <!--ingreso a la galeria-->
                 <div>

@@ -288,15 +288,6 @@ input[type="submit"]:hover{
 .link_inscripcion a:hover {
   text-decoration: underline;
 }
-.connected-circle {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  border-radius:50%;
-  background-color: green; /* Color del círculo */
-  margin-right: 10px; /* Espacio entre el círculo y el texto */
-}
-
 
 nav ul {
   list-style: none;
@@ -309,4 +300,32 @@ nav ul li {
 
 nav ul li i {
   color: #007BFF; /* Cambia el color según tus necesidades */
+}
+
+
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Espacio entre las imágenes */
+}
+
+.image-box {
+  border: 1px solid #ccc; /* Bordes de los recuadros */
+  padding: 10px; /* Espaciado interno */
+  text-align: center; /* Centrar el texto */
+  width: 20%; /* Ancho del recuadro (ajusta según necesidad) */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
+  background-color: rgba(192, 192, 192, 0.56);
+  border-radius: 2rem 4rem;
+
+  height: auto;
+}
+
+.image-box img {
+  max-width: 100%; /* Asegura que la imagen no desborde el recuadro */
+  height: auto; /* Mantiene la relación de aspecto */
+  border: 2px solid yellow; /* agrega borde negro*/
+  border-radius: 2rem 4rem; /* Borde redondeado en imagen*/
+  padding: 1px; /* Espacio entre el borde e imagen */
 }

@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404 # type: ignore
 from django.contrib.auth import logout # type: ignore
 from django.contrib.auth.decorators import login_required # type: ignore
 from django.http import HttpResponse # type: ignore
-from .models import ImageEntry
+from .models import ImageEntry, cliente
 from .forms import ImageEntryForm
 
 # Create your views here.
@@ -11,7 +11,7 @@ from .forms import ImageEntryForm
 #)
 
 def index (request) :
-    latest_images = ImageEntry.objects.order_by('-id')[:3]  # Obtiene las 3 últimas imágenes
+    latest_images = ImageEntry.objects.order_by('-date')[:3]  # Obtiene las 3 últimas imágenes
     #context = { }
     return render(request, 'index.html', {'latest_images': latest_images})
 
@@ -30,10 +30,11 @@ def Ingreso (request) :
 def registro (request) :
     #context = { }
     return render(request, "registro.html")
-
-def galeria (request) :
+def galeria(request):
+    images = ImageEntry.objects.all().order_by('-date') # Obtener todas las imágenes
+    return render(request, 'image_list.html', {'images': images})
     #context = { }
-    return render(request, "galeria.html")
+    #return render(request, "galeria.html")
 
 def ultimoT1 (request) :
     #context = { }
@@ -49,8 +50,8 @@ def ultimoT3 (request) :
 
 def crud (request):
     cliente = cliente.objects.all()
-    context = {'cliente': cliente}
-    return render (request, 'eliminarU.html', context)
+    #context = {'cliente': cliente}
+    return render (request, 'eliminarU.html', {'cliente': cliente})
 
 #vista para manejar
 @login_required

@@ -1,8 +1,8 @@
 # forms.py
-from django import forms
-from django.contrib.auth.forms import UserCreationForm
-from .models import User
-from .models import ImageEntry
+from django import forms # type: ignore
+from django.contrib.auth.forms import UserCreationForm # type: ignore
+from .models import User, ImageEntry
+
 
 class RegisterForm(UserCreationForm):
     class Meta:

@@ -1,6 +1,6 @@
 # models.py
-from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.db import models # type: ignore
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager # type: ignore
 
 class UserManager(BaseUserManager):
     def create_user(self, email, password=None):
@@ -46,22 +46,22 @@ class User(AbstractBaseUser):
         return self.is_admin
 
 class cliente(models.Model):
-    rut              = models.CharField(primary_key=True, max_length=10)
-    nombre           = models.CharField(max_length=20)
+    rut = models.CharField(primary_key=True, max_length=10)
+    nombre = models.CharField(max_length=20)
     apellido_paterno = models.CharField(max_length=20)
     apellido_materno = models.CharField(max_length=20)
-    fecha_nacimiento = models.DateField(blank=False, null=False) 
-    telefono         = models.CharField(max_length=45)
-    email            = models.EmailField(unique=True, max_length=100, blank=True, null=True)
-    direccion        = models.CharField(max_length=50, blank=True, null=True)  
-    activo           = models.IntegerField()
+    fecha_nacimiento = models.DateField(blank=False, null=False)
+    telefono = models.CharField(max_length=45)
+    email = models.EmailField(unique=True, max_length=100, blank=True, null=True)
+    direccion = models.CharField(max_length=50, blank=True, null=True)
+    activo = models.IntegerField()
 
     def __str__(self):
-        return str(self.nombre)+" "+str(self.apellido_paterno)
+        return f"{self.nombre} {self.apellido_paterno}"
 
 # para almacenar la información de las imágenes, descripciones y materiales usados.
 class ImageEntry(models.Model):
-    title = models.CharField(max_length=255, default='Título por defecto')  # Agregar un valor por defecto
+    title = models.CharField(max_length=255, default='Título por defecto')
     image = models.ImageField(upload_to='images/')
     description = models.TextField()
     materials = models.CharField(max_length=255)

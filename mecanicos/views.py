@@ -64,10 +64,13 @@ def image_create(request):
     if request.method == 'POST':
         form = ImageEntryForm(request.POST, request.FILES)
         if form.is_valid():
-            materials = request.POST.getlist('materials')
-            image_entry = form.save(commit=False)
-            image_entry.materials = ','.join(materials)
-            image_entry.save()
+            image_entry = form.save()
+            materials = request.POST.get('materials', '').split(',')
+            for material in materials:
+                material = material.strip()
+                # Asegúrate de que 'Material' esté importado y exista
+                material_instance, created = Material.objects.get_or_create(name=material)
+                image_entry.materials.add(material_instance)  # Agregar al ManyToMany
             return redirect('image_list')
     else:
         form = ImageEntryForm()
@@ -79,10 +82,14 @@ def image_update(request, pk):
     if request.method == 'POST':
         form = ImageEntryForm(request.POST, request.FILES, instance=image)
         if form.is_valid():
-            materials = request.POST.getlist('materials')
             image_entry = form.save(commit=False)
-            image_entry.materials = ','.join(materials)
-            image_entry.save()
+            materials = request.POST.get('materials', '').split(',')
+            image_entry.save()  # Guarda primero la entrada de imagen
+            image_entry.materials.clear()  # Limpia los materiales anteriores
+            for material in materials:
+                material = material.strip()
+                material_instance, created = Material.objects.get_or_create(name=material)
+                image_entry.materials.add(material_instance)  # Agregar nuevos materiales
             return redirect('image_list')
     else:
         form = ImageEntryForm(instance=image)

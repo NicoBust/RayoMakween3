@@ -1,6 +1,7 @@
 # models.py
 from django.db import models # type: ignore
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager # type: ignore
+#from .models import Material
 
 class UserManager(BaseUserManager):
     def create_user(self, email, password=None):
@@ -60,16 +61,29 @@ class cliente(models.Model):
         return f"{self.nombre} {self.apellido_paterno}"
 
 # para almacenar la información de las imágenes, descripciones y materiales usados.
+class Material(models.Model):
+    name = models.CharField(max_length=255, choices=[
+        ('Ampolleta', 'Ampolleta'),
+        ('mangera', 'mangera'),
+        ('foco delantero', 'foco delantero'),
+        ('pasta', 'pasta'),
+        ('aceite', 'aceite'),
+        ('foco trasero', 'foco trasero'),
+    ])
+
+    def __str__(self):
+        return self.name
+
 class ImageEntry(models.Model):
     title = models.CharField(max_length=255, default='Título por defecto')
     image = models.ImageField(upload_to='images/')
     description = models.TextField()
-    materials = models.CharField(max_length=255)
+    materials = models.ManyToManyField(Material, related_name='image_entries') #models.CharField(max_length=255)
     date = models.DateField()
     author = models.CharField(max_length=100, choices=[
-        ('Esteban', 'Esteban'),
-        ('Nicolas', 'Nicolas'),
-        ('Juan', 'Juan'),
+        ('Esteban Salas', 'Esteban Salas'),
+        ('Nicolas Bustamante', 'Nicolas Bustamante'),
+        ('Juan Pérez', 'Juan Pérez'),
     ])
 
     def __str__(self):

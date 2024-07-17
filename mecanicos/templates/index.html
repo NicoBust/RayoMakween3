@@ -16,6 +16,7 @@
         <script defer src="data.js"></script>
         {% load static %}
         <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <script src="{% static 'js/busqueda.jason' %}"></script>
         <script src="{% static 'js/data.js' %}"></script>
         <script src="{% static 'js/data.jason' %}"></script>
@@ -30,7 +31,6 @@
     
     <body>
         <header>
-
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid bg-plomo">
                     <a href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" width="60" style="cursor: pointer;"></a>
@@ -46,11 +46,23 @@
                             <li class="nav-item"><a class="nav-link" href="{% url 'registro' %}">Registrarse</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'Ingreso' %}">Ingreso</a></li>
                         </ul>
+        
+                        <!-- Mostrar nombre de usuario y botón "Salir" solo si el usuario está autenticado -->
+                        {% if user.is_authenticated %}
+                            <div class="navbar-text txt-plomo me-3">
+                                Bienvenido, {{ user.username }}!
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <form action="{% url 'logout' %}" method="post" style="display:inline;">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-link nav-link">Salir</button>
+                                </form>
+                            </div>
+                        {% endif %}
+        
                         <form id="searchForm" class="d-flex" role="search">
-                            <!-- inicio sector de busqueda -->
                             <input id="searchInput" class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
                             <button class="btn btn-outline-secondary" type="submit">Buscar</button>
-                        </form> <!-- fin sector de busqueda -->
+                        </form>
                     </div>
                 </div>
             </nav>
@@ -59,30 +71,32 @@
         <main>
             <!-- carrusel -->
             <div id="carouselExampleCaptions" class="carousel slide">
-                <div class="carousel-indicators">
-                    {% for image in latest_images %}
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}" aria-current="true" aria-label="Slide {{ forloop.counter }}"></button>
-                    {% endfor %}
-                </div>
-                <div class="carousel-inner">
-                    {% for image in latest_images %}
-                        <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                            <img src="{{ image.image.url }}" class="d-block w-100" alt="{{ image.title }}">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h2 class="txt-amarillo">{{ image.title }}</h2>
-                                <h5 class="txt-amarillo">{{ image.description }}</h5>
+                <div class="col-lg-12">
+                    <div class="carousel-indicators">
+                        {% for image in latest_images %}
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}" aria-current="true" aria-label="Slide {{ forloop.counter }}"></button>
+                        {% endfor %}
+                    </div>
+                    <div class="carousel-inner">
+                        {% for image in latest_images %}
+                            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                                <img src="{{ image.image.url }}" class="d-block w-100" alt="{{ image.title }}" height="850">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h2 class="txt-amarillo">{{ image.title }}</h2>
+                                    <h5 class="txt-amarillo">{{ image.description }}</h5>
+                                </div>
                             </div>
-                        </div>
-                    {% endfor %}
+                        {% endfor %}
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
             <!-- fin carrusel -->
 

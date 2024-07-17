@@ -296,3 +296,17 @@ input[type="submit"]:hover{
   background-color: green; /* Color del círculo */
   margin-right: 10px; /* Espacio entre el círculo y el texto */
 }
+
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 15px;
+}
+
+nav ul li i {
+  color: #007BFF; /* Cambia el color según tus necesidades */
+}

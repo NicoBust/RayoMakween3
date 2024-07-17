@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404 # type: ignore
+from django.contrib.auth import logout # type: ignore
+from django.contrib.auth.decorators import login_required # type: ignore
 from django.http import HttpResponse
 from .models import ImageEntry
 from .forms import ImageEntryForm
@@ -51,31 +53,41 @@ def crud (request):
     return render (request, 'eliminarU.html', context)
 
 #vista para manejar
+@login_required
 def image_list(request):
     images = ImageEntry.objects.all()
     return render(request, 'image_list.html', {'images': images})
 
+@login_required
 def image_create(request):
     if request.method == 'POST':
         form = ImageEntryForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            materials = request.POST.getlist('materials')
+            image_entry = form.save(commit=False)
+            image_entry.materials = ','.join(materials)
+            image_entry.save()
             return redirect('image_list')
     else:
         form = ImageEntryForm()
     return render(request, 'image_form.html', {'form': form})
 
+@login_required
 def image_update(request, pk):
     image = get_object_or_404(ImageEntry, pk=pk)
     if request.method == 'POST':
         form = ImageEntryForm(request.POST, request.FILES, instance=image)
         if form.is_valid():
-            form.save()
+            materials = request.POST.getlist('materials')
+            image_entry = form.save(commit=False)
+            image_entry.materials = ','.join(materials)
+            image_entry.save()
             return redirect('image_list')
     else:
         form = ImageEntryForm(instance=image)
     return render(request, 'image_form.html', {'form': form})
 
+@login_required
 def image_delete(request, pk):
     image = get_object_or_404(ImageEntry, pk=pk)
     if request.method == 'POST':
@@ -83,6 +95,9 @@ def image_delete(request, pk):
         return redirect('image_list')
     return render(request, 'image_confirm_delete.html', {'image': image})
 
+def logout_view(request):
+    logout(request)
+    return redirect('index')
 
 #registro django
 # views.py

@@ -44,3 +44,15 @@ RAYOMAKWEEN/
 ├── README.md
 ├── requirements.txt
 ├── rutas.txt
+
+
+Superuser:
+1
+-Usuario: esteban
+-Contraseña: Esteban
+2
+-Usuario: nicolas
+-Contraseña: Bustamante
+3
+-Usuario: oscar
+-Contraseña: Profesor

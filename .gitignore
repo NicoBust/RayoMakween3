@@ -9,3 +9,6 @@
 # Archivos de bases de datos
 
 #*.sqlite3
+
+#Enviroments
+.env

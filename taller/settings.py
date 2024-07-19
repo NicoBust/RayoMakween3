@@ -11,21 +11,33 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+<<<<<<< HEAD
 import os
 import environ
 
 # Inicializa la librería environ
 env = environ.Env()
 # Lee el archivo .env si existe
+=======
+import os #agregado
+import environ 
+
+environ.Env()
+>>>>>>> f3980110773089c3339abe54f03f1f97cba75c55
 environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+<<<<<<< HEAD
+=======
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) #agregado
+>>>>>>> f3980110773089c3339abe54f03f1f97cba75c55
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+<<<<<<< HEAD
 SECRET_KEY = env('DJANGO_SECRET_KEY', default='replace-me-with-a-secret-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -34,6 +46,19 @@ DEBUG = env.bool('DEBUG', default=True)
 ALLOWED_HOSTS = ['*']
 
 # Application definition
+=======
+SECRET_KEY = os.environ.get('SECRET_KEY')
+
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = os.environ.get('DEBUG') 
+
+ALLOWED_HOSTS = ['*']
+
+
+# Application definition
+
+>>>>>>> f3980110773089c3339abe54f03f1f97cba75c55
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -59,7 +84,11 @@ ROOT_URLCONF = 'taller.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+<<<<<<< HEAD
         'DIRS': [os.path.join(BASE_DIR, 'mecanicos', 'templates')],
+=======
+        'DIRS': [os.path.join(BASE_DIR, 'mecanicos', 'templates')], #agregado
+>>>>>>> f3980110773089c3339abe54f03f1f97cba75c55
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -74,6 +103,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'taller.wsgi.application'
 
+<<<<<<< HEAD
 # Database
 DATABASES = {
     'default': {
@@ -83,6 +113,23 @@ DATABASES = {
 }
 
 # Password validation
+=======
+
+# Database
+# https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'), # se cambio de esto: BASE_DIR / 'db.sqlite3' .agregado
+    }
+}
+
+
+# Password validation
+# https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
+
+>>>>>>> f3980110773089c3339abe54f03f1f97cba75c55
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -98,7 +145,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+<<<<<<< HEAD
 # Internationalization
+=======
+
+# Internationalization
+# https://docs.djangoproject.com/en/4.1/topics/i18n/
+
+>>>>>>> f3980110773089c3339abe54f03f1f97cba75c55
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -107,6 +161,7 @@ USE_I18N = True
 
 USE_TZ = True
 
+<<<<<<< HEAD
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = 'static/'
 
@@ -118,3 +173,21 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 LOGIN_REDIRECT_URL = 'image_list'
+=======
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/4.1/howto/static-files/
+
+STATIC_URL = 'static/'
+
+# Default primary key field type
+# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#agregado
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+LOGIN_REDIRECT_URL = 'image_list'
+>>>>>>> f3980110773089c3339abe54f03f1f97cba75c55

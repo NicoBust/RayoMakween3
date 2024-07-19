@@ -328,6 +328,7 @@ nav ul li i {
   border: 2px solid yellow; /* agrega borde negro*/
   border-radius: 2rem 4rem; /* Borde redondeado en imagen*/
   padding: 1px; /* Espacio entre el borde e imagen */
+<<<<<<< HEAD
 }
 
 .card {
@@ -387,3 +388,6 @@ nav ul li i {
         padding: 0.75rem 1.25rem;
     }
 
+=======
+}
+>>>>>>> f3980110773089c3339abe54f03f1f97cba75c55

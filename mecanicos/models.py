@@ -1,8 +1,11 @@
 # models.py
 from django.db import models # type: ignore
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager # type: ignore
+<<<<<<< HEAD
 from django.contrib.auth.models import User
 
+=======
+>>>>>>> f3980110773089c3339abe54f03f1f97cba75c55
 #from .models import Material
 
 class UserManager(BaseUserManager):
@@ -90,6 +93,7 @@ class ImageEntry(models.Model):
 
     def __str__(self):
         return self.title
+<<<<<<< HEAD
 
 class Product(models.Model):
     name = models.CharField(max_length=100)
@@ -107,3 +111,5 @@ class CartItem(models.Model):
 
     def __str__(self):
         return f"{self.quantity} x {self.product.name}"
+=======
+>>>>>>> f3980110773089c3339abe54f03f1f97cba75c55

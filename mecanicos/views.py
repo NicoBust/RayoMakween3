@@ -2,16 +2,10 @@ from django.shortcuts import render, redirect, get_object_or_404 # type: ignore
 from django.contrib.auth import logout # type: ignore
 from django.contrib.auth.decorators import login_required # type: ignore
 from django.http import HttpResponse # type: ignore
-<<<<<<< HEAD
 from .models import ImageEntry, cliente ,Product, CartItem
 from .forms import ImageEntryForm
 
 
-=======
-from .models import ImageEntry, cliente
-from .forms import ImageEntryForm
-
->>>>>>> f3980110773089c3339abe54f03f1f97cba75c55
 # Create your views here.
 #TEMPLATE_DIRS = (
 #    'OS.PATH.JOIN(base_dir, "TEMPLATES),'
@@ -114,7 +108,6 @@ def logout_view(request):
     logout(request)
     return redirect('index')
 
-<<<<<<< HEAD
 from django.shortcuts import render
 
 def carrito_view(request):
@@ -150,8 +143,6 @@ def cart(request):
 
 
 
-=======
->>>>>>> f3980110773089c3339abe54f03f1f97cba75c55
 #registro django
 # views.py
 #from django.shortcuts import render, redirect

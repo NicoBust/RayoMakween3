@@ -1,10 +1,6 @@
 <!doctype html>
 <html lang="en">
     <head>
-<<<<<<< HEAD
-=======
-
->>>>>>> f3980110773089c3339abe54f03f1f97cba75c55
         <title>Rayo Makween</title>
         <!-- Required meta tags -->
         <meta charset="utf-8" />
@@ -30,7 +26,6 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@200..900&display=swap" rel="stylesheet">
-<<<<<<< HEAD
 
         <!-- Estilos adicionales -->
         <style>
@@ -40,8 +35,6 @@
                 border-radius: 0.5rem; /* Bordes redondeados */
             }
         </style>
-=======
->>>>>>> f3980110773089c3339abe54f03f1f97cba75c55
     </head>
     
     <body>
@@ -60,13 +53,10 @@
                             <li class="nav-item"><a class="nav-link" href="{% url 'contacto' %}">Contacto</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'registro' %}">Registrarse</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'Ingreso' %}">Ingreso</a></li>
-<<<<<<< HEAD
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'carrito' %}">
                                     <i class="fa fa-shopping-cart"></i> Carrito
                                 </a>
-=======
->>>>>>> f3980110773089c3339abe54f03f1f97cba75c55
                         </ul>
         
                         <!-- Mostrar nombre de usuario y botón "Salir" solo si el usuario está autenticado -->
@@ -102,11 +92,7 @@
                     <div class="carousel-inner">
                         {% for image in latest_images %}
                             <div class="carousel-item {% if forloop.first %}active{% endif %}">
-<<<<<<< HEAD
                                 <img src="{{ image.image.url }}" class="d-block w-100" alt="{{ image.title }}" height="550">
-=======
-                                <img src="{{ image.image.url }}" class="d-block w-100" alt="{{ image.title }}" height="850">
->>>>>>> f3980110773089c3339abe54f03f1f97cba75c55
                                 <div class="carousel-caption d-none d-md-block">
                                     <h2 class="txt-amarillo">{{ image.title }}</h2>
                                     <h5 class="txt-amarillo">{{ image.description }}</h5>
@@ -131,11 +117,7 @@
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-8 col-md-8 txt-justificado">
-<<<<<<< HEAD
                                 <p class="t600 display-5 txt-black text-center">Detalle de trabajos</p>
-=======
-                                <p class="t600 display-5 txt-naranja text-center">Detalle de trabajos</p>
->>>>>>> f3980110773089c3339abe54f03f1f97cba75c55
                                 <p class="txt-justificado txt-plomo">Se llevaron a cabo varios proyectos integrales que incluyó el cambio de un catalitico,
                                     un cambio en caja de cambio, solucion a un problema electrico, además,
                                     la renovación completa de la pintura del vehículo y la actualización de las luces de halógeno a LED.
@@ -145,16 +127,10 @@
                         </div>
                     </div>
                 </div>
-<<<<<<< HEAD
                 <div><p class="t400 display-6 txt-black text-center">Nuestras Ultimas Reparaciones</p>
                 </div>
                 <br><br>
                
-=======
-                <div><p class="t400 display-6 txt-naranja text-center">Ultimos 3 de nuestras reparaciónes</p>
-                </div>
-                <h1>Últimas Imágenes</h1>
->>>>>>> f3980110773089c3339abe54f03f1f97cba75c55
                 <div class="image-grid">
                     {% for image in images %}
                         <div class="image-box">
@@ -171,11 +147,7 @@
                             <p class="#">{{ image.title }} - {{ image.date|date:"d-M-Y"}}</p>
                             <img src="{{ image.image.url }}" class="d-block w-100" alt="{{ image.title }}" height="190">
                             <div class="">
-<<<<<<< HEAD
                              <a href="{% url 'ultimoT1' %}"> Detalles</a>   
-=======
-                             <a href="{% url 'ultimoT1' %}"> detalle</a>   
->>>>>>> f3980110773089c3339abe54f03f1f97cba75c55
                                 <!--h5 class="txt-amarillo">{{ image.description }}</h5-->
                             </div>
                         </div>
@@ -184,11 +156,7 @@
 
                 <!--ingreso a la galeria-->
                 <div>
-<<<<<<< HEAD
                     <a class="dropdown-item" href="{% url 'galeria' %}"><p class="t600 display-5 txt-black text-center">Nuestra Galería Completa</p></a>
-=======
-                    <a class="dropdown-item" href="{% url 'galeria' %}"><p class="t600 display-5 txt-naranja text-center">Nuestra galería completa</p></a>
->>>>>>> f3980110773089c3339abe54f03f1f97cba75c55
                 </div>
                 <!--fin ingreso a la galeria-->
             </div>
@@ -226,8 +194,4 @@
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     </body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> f3980110773089c3339abe54f03f1f97cba75c55
